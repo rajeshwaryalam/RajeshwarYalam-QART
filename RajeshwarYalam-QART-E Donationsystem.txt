@@ -1,0 +1,250 @@
+/*E-Donation System
+----------------------
+
+1.User Story US_01  Donor Functionalities:
+
+
+
+2. User Story US_02 NGO Functionalities:
+
+
+
+3. User Story US_03 Donation Functionalities:
+
+4. User Story US_04 Donor Functionality:
+
+5. User Story US_04 Donor Functionality:
+
+*/
+
+
+import javautil.Set;
+import javax.validation.Validation;
+import javax.validation.Validator;
+import javax.validation.ValidatorFactory;
+import java.util.regex.*;
+  
+@ExtendWith(SpringExtension.class)
+
+public class BoundaryTest{
+
+private static Validator validator;
+
+@BeforeAll
+public static void setup(){
+ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
+validator = factory.getValidator();
+}
+
+@AfterAll
+public static void afterAll(){
+
+ testReport();
+}
+
+
+
+class GFG {
+  
+    // Function to validate the username
+    public static boolean isValidUsername(String name)
+    {
+  
+        // Regex to check valid username.
+        String regex = "^[A-Za-z]\\w{5,30}$";
+  
+        // Compile the ReGex
+        Pattern p = Pattern.compile(regex);
+  
+        // If the username is empty
+        // return false
+        if (username == null) {
+            return false;
+        }
+
+class PasswordValidator
+{
+        public PasswordValidator()
+        {
+                super();
+        }
+        public static void main(String[] args)
+        {
+                PasswordValidator passwordValidator = new PasswordValidator();
+               
+                             
+                passwordValidator.passwordValidation(userName,passWord);
+                   System.out.println("Input : UserName "+userName+" PassWord -> "+passWord);
+                passwordValidator.passwordValidation(userName,passWord);
+        }
+
+        /*
+         * Password should be less than 25 and more than 3 characters in length.
+         
+         */
+
+        public void passwordValidation(String userName, String password)
+        {
+                boolean valid = true;
+                if (password.length() > 25 || password.length() < 3)
+                {
+                        System.out.println("Password should be less than 25 and more than 3 characters in length.");
+                        valid = false;
+                }
+
+
+        if (password == null) {
+            return false;
+        }
+
+/* Email is not null, and it should be valid email pattern,containing a single @*/
+
+import java.util.Scanner;
+
+public class Email_Validation {
+
+    public static void main(String[] args) {
+
+        
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Enter your email address");
+        String email = scan.next();
+
+        
+        boolean checkEndDot  = false;
+        checkEndDot = email.endsWith(".");
+
+     
+        int indexOfAt = email.indexOf('@');
+        int lastIndexOfAt = email.lastIndexOf('.');
+
+
+          
+        int countOfAt = 0;
+
+        for (int i = 0; i < email.length(); i++) {
+            if(email.charAt(i)=='@')
+                countOfAt++; }
+
+
+        
+        String buffering = email.substring(email.indexOf('@')+1, email.length());
+        int len = buffering.length();
+
+        int countOfDotAfterAt = 0;
+        for (int i=0; i < len; i++) {
+            if(buffering.charAt(i)=='.')
+                countOfDotAfterAt++; }
+
+
+
+            String userName = email.substring(0, email.indexOf('@'));
+            String domainName = email.substring(email.indexOf('@')+1, email.length());
+
+                System.out.println("\n");   
+
+               if ((countOfAt==1) && (userName.endsWith(".")==false)  && (countOfDotAfterAt ==1) &&   
+                  ((indexOfAt+3) <= (lastIndexOfAt) && !checkEndDot)) {
+
+                   System.out.println("\"Valid email address\"");}
+
+               else {       
+                        System.out.println("\n\"Invalid email address\""); }
+
+
+                System.out.println("\n");
+                System.out.println("User name: " +userName+ "\n" + "Domain name: " +domainName);
+
+
+    }
+}
+
+/* Phone Number is not null,min 10 and max10 char*/
+import java.util.regex.*;  
+public class Phone NumberValidation  
+{  
+    
+public static boolean isValidPhoneNo(String str)  
+{  
+
+Pattern ptrn = Pattern.compile("(0/91)?[7-9][0-9]{9}");  
+
+Matcher match = ptrn.matcher(str);  
+
+return (match.find() && match.group().equals(str));  
+}  
+
+public static void main(String args[])  
+{  
+   
+String str = "9800088899";  
+
+if (isValidPhoneNo(str))  
+System.out.println("It is a valid Phone  number.");   
+else  
+System.out.println("Entered Phone number is invalid.");      
+}  
+}   
+
+/* Address id not null, min 5 and max 100 characters*/
+import java.io.*;
+
+    public class MailAddress{
+
+    public static void main(String args[]){
+
+        BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+
+        String name="";
+
+         
+
+        try{
+
+            System.out.println("Please enter your Home Address: ");
+
+            name=br.readLine();
+
+        String addressToken="[\\p{Punct}&&[#,.()-]]+\\p{Alpha}*+\\d*+\\s?";
+
+        String addressPattern="("+addressToken+"){5,100}";
+
+         
+
+        if(name.matches(addressPattern))
+
+            System.out.println("You entered a VALID Home Address format.");
+
+        else
+
+            System.out.println("You entered an INVALID Home Address format.");
+
+        }
+
+ 
+
+       catch(Exception e){
+
+        e.printStackTrace();
+
+        }
+
+         
+
+             
+
+
+    }
+
+}
+
+/* 2. User Story US_02 NGO Functionalities: If NGO id is not valid, it throws exception*/
+
+@Test
+public void testRegisterNgoInvalidDataException() throws Exception {
+NgoDto ngoDto = MasterData.getNgoDto();
+NgoDto savedNgoDto = MasterData.getNgoDto();
+savedNgoDto.setNgoId(1L);
+ngoDto.setNgoName("Ab");
+
+@Test
